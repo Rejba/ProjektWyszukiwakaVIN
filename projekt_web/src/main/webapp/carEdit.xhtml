@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/templates/page-template.xhtml">
+
+	<ui:define name="pageContent">
+
+		<f:metadata>
+			<f:viewAction action="#{carEditBB.onLoad()}" />
+		</f:metadata>
+
+		<h:head>
+			<meta charset="utf-8" />
+
+		</h:head>
+
+		<h:body style=" margin: 0.5em;">
+
+			<p:panel toggleable="true" header="Edycja rekordu">
+
+				<h:form rendered="#{carEditBB.auto != null}">
+					<h:panelGrid columns="3" cellpadding="5">
+
+						<h:outputLabel for="i-vin" value="VIN:" />
+						<p:inputText id="i-vin" value="#{carEditBB.auto.vin}"
+							required="true" requiredMessage="podaj vin"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-vin" display="icon" />
+
+						<h:outputLabel for="i-marka" value="Marka:" />
+						<p:inputText id="i-marka" value="#{carEditBB.auto.marka}"
+							required="true" requiredMessage="podaj marke"
+							validatorMessage="co najwyżej 40 znaków" >
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-marka" display="icon" />
+
+
+						<h:outputLabel for="i-model" value="Model:" />
+						<p:inputText id="i-model" value="#{carEditBB.auto.model}"
+							required="true" requiredMessage="podaj model"
+							>
+						</p:inputText>
+						<p:message for="i-model" display="icon" />
+
+
+					<h:outputLabel for="i-typNadwozia" value="Typ nadwozia:" />
+						<p:inputText id="i-typNadwozia" value="#{carEditBB.auto.typNadwozia}"
+							required="true" requiredMessage="Podaj typ nadwozia"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-typNadwozia" display="icon" />
+						
+						
+						<h:outputLabel for="i-rokProdukcji" value="Rok produkcji:" />
+						<p:inputText id="i-rokProdukcji" value="#{carEditBB.auto.rokProdukcji}"
+							required="true" requiredMessage="Podaj rok produkcji"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-rokProdukcji" display="icon" />
+						
+						<h:outputLabel for="i-pojemnoscSilnika" value="Pojemnosc silnika:" />
+						<p:inputText id="i-pojemnoscSilnika" value="#{carEditBB.auto.pojemnoscSilnika}"
+							required="true" requiredMessage="Podaj pojemnosc silnika"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-pojemnoscSilnika" display="icon" />
+						
+						<h:outputLabel for="i-mocSilnika" value="Moc silnika:" />
+						<p:inputText id="i-mocSilnika" value="#{carEditBB.auto.mocSilnika}"
+							required="true" requiredMessage="Podaj login"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-mocSilnika" display="icon" />
+						
+						
+						<h:outputLabel for="i-rodzajPaliwa" value="Rodzaj paliwa:" />
+						<p:inputText id="i-rodzajPaliwa" value="#{carEditBB.auto.rodzajPaliwa}"
+							required="true" requiredMessage="Podaj rodzaj paliwa"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-mocSilnika" display="icon" />
+						
+						
+						<h:outputLabel for="i-paliwoAlternatywne" value="Paliwo alternatywne:" />
+						<p:inputText id="i-paliwoAlternatywne" value="#{carEditBB.auto.paliwoAlternatywne}"
+							required="true" requiredMessage="Podaj paliwo alternatywne"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-paliwoAlternatywne" display="icon" />
+						
+						
+						
+						<h:outputLabel for="i-ostatniStanDrogomierza" value="Ostatni stan drogomierza:" />
+						<p:inputText id="i-ostatniStanDrogomierza" value="#{carEditBB.auto.ostatniStanDrogomierza}"
+							required="true" requiredMessage="Podaj ostatni stan drogomierz"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-ostatniStanDrogomierza" display="icon" />
+						
+						
+						
+						<h:outputLabel for="i-masaWlasnaPojazdu" value="Masa wlasna pojazdu:" />
+						<p:inputText id="i-masaWlasnaPojazdu" value="#{carEditBB.auto.masaWlasnaPojazdu}"
+							required="true" requiredMessage="Podaj mase wlasna pojazdu"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-masaWlasnaPojazdu" display="icon" />
+						
+						
+						
+						
+						<h:outputLabel for="i-liczbaMiejscSiedzacych" value="Liczba miejsc siedzących:" />
+						<p:inputText id="i-liczbaMiejscSiedzacych" value="#{carEditBB.auto.liczbaMiejscSiedzacych}"
+							required="true" requiredMessage="Podaj liczbe miejsc siedzacych"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-liczbaMiejscSiedzacych" display="icon" />
+						
+						
+						
+						<h:outputLabel for="i-dataOstatniegoPrzegladu" value="Data ostatniego przeglądu:" />
+						<p:inputText id="i-dataOstatniegoPrzegladu" value="#{carEditBB.auto.dataOstatniegoPrzegladu}"
+							required="true" requiredMessage="Podaj date ostatniego przegladu"
+							validatorMessage="co najwyżej 40 znaków" type="date" >
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-dataOstatniegoPrzegladu" display="icon" />
+						
+						
+						<h:outputLabel for="i-wynikBadania" value="Wynik badania:" />
+						<p:inputText id="i-wynikBadania" value="#{carEditBB.auto.wynikBadania}"
+							required="true" requiredMessage="Podaj wynik badania"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="i-wynikBadania" display="icon" />
+
+
+					</h:panelGrid>
+
+					<p:messages id="msgs" />
+
+					<p:commandButton value="Zapisz" action="#{carEditBB.saveData()}"
+						style="margin-right: 1em;" update="@form" />
+
+					<p:button value="Anuluj" outcome="userList" />
+				</h:form>
+
+			</p:panel>
+
+		</h:body>
+	</ui:define>
+
+</ui:composition>
+</html>

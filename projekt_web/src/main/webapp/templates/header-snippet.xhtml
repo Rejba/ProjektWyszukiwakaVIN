@@ -11,21 +11,21 @@
 
 			<p:menubar>
 				<p:menuitem label="Home" value="Główna strona"
-					icon="pi pi-fw pi-home" />
+					icon="pi pi-fw pi-home" outcome="index" />
 
 
 
 				<p:submenu label="Logowanie" icon="pi pi-fw pi-user">
-					<p:menuitem value="Zarejestruj sie" icon="pi pi-fw pi-user-plus" />
-					<p:menuitem value="Zaloguj się" icon="pi pi-fw pi-sign-in" />
+					<p:menuitem value="Zarejestruj sie" icon="pi pi-fw pi-user-plus" outcome="userRegistr" action="#{loginBB.doLogout()}"/>
+					<p:menuitem value="Zaloguj się" icon="pi pi-fw pi-sign-in" outcome="userLogin" action="#{loginBB.doLogout()}" />
 
 				</p:submenu>
 
 				<p:submenu label="Panel admin" icon="pi pi-fw pi-table">
 					
 					<p:submenu label="Baza danych" icon="pi pi-fw pi-desktop" >
-						<p:menuitem value="Użytkownicy" icon="pi pi-fw pi-users" />
-						<p:menuitem value="Samochody" icon="pi pi-fw pi-circle-off"/>
+						<p:menuitem value="Użytkownicy" icon="pi pi-fw pi-users" outcome="userList"/>
+						<p:menuitem value="Samochody" icon="pi pi-fw pi-circle-off" outcome="carList"/>
 					</p:submenu>
 
 				</p:submenu>
@@ -34,7 +34,7 @@
 
 				<f:facet name="options">
 
-					<p:button value="Logout" icon="pi pi-fw pi-sign-out"
+					<p:commandButton value="Logout"  action="#{loginBB.doLogout()}" icon="pi pi-fw pi-sign-out" outcome="userLogin"
 						styleClass="ui-button-info" />
 				</f:facet>
 			</p:menubar>

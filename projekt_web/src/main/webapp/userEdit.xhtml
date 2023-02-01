@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<ui:composition template="/templates/page-template.xhtml">
+
+	<ui:define name="pageContent">
+
+		<f:metadata>
+			<f:viewAction action="#{userEditBB.onLoad()}" />
+		</f:metadata>
+
+		<h:head>
+			<meta charset="utf-8" />
+
+		</h:head>
+
+		<h:body style=" margin: 0.5em;">
+
+			<p:panel toggleable="true" header="Edycja rekordu">
+
+				<h:form rendered="#{userEditBB.user != null}">
+					<h:panelGrid columns="3" cellpadding="5">
+
+						<h:outputLabel for="u-login" value="login:" />
+						<p:inputText id="u-login" value="#{userEditBB.user.login}"
+							required="true" requiredMessage="Podaj login"
+							validatorMessage="co najwyżej 40 znaków">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="u-login" display="icon" />
+
+						<h:outputLabel for="u-email" value="email:" />
+						<p:inputText id="u-email" value="#{userEditBB.user.email}"
+							required="true" requiredMessage="podaj email"
+							validatorMessage="co najwyżej 40 znaków" type="email">
+							<f:validateLength maximum="40" />
+						</p:inputText>
+						<p:message for="u-email" display="icon" />
+
+
+	
+
+						<h:outputLabel for="u-idRola" value="id roli:" />
+						<p:inputText id="u-idRola" value="#{userEditBB.user.rola.idRola}"
+							required="true" requiredMessage="podaj id roli"
+							pattern="[1-3]{1}" title="1-admin,2-moderator,3-user" >
+						</p:inputText>
+						<p>1-admin, 2-moderator, 3-user</p>
+						<p:message for="u-idRola" display="icon" />
+
+
+					</h:panelGrid>
+
+					<p:messages id="msgs" />
+
+					<p:commandButton value="Zapisz" action="#{userEditBB.saveData()}"
+						style="margin-right: 1em;" update="@form" />
+
+					<p:button value="Anuluj" outcome="userList" />
+				</h:form>
+
+			</p:panel>
+
+		</h:body>
+	</ui:define>
+
+</ui:composition>
+</html>

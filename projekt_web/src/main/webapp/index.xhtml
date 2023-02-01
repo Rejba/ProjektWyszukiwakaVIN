@@ -8,7 +8,7 @@
 
 <ui:composition template="/templates/page-template.xhtml">
 
-	<ui:define name="pageContent">
+	<ui:define name="pageContent" >
 		<p:panel header="Wyszukaj samochód po numerze VIN"
 			style="  font-size:30px;">
 
@@ -21,11 +21,11 @@
 
  
 						<span id="spanIndex" class="pi pi-fw pi-search"> 
-							<p:inputText placeholder="TU WPISZ VIN" size="100" />
+							<p:inputText placeholder="TU WPISZ VIN" size="100" value="#{carListBB.vin}" />
 						</span>
 
 
-						<p:commandButton value="SPRAWDŹ VIN " action="submit"
+						<p:commandButton value="SPRAWDŹ VIN " action="#{carListBB.getList()}"
 							update="@form" style="position:relative; left:320px;"/>
 
 
@@ -33,8 +33,7 @@
 					</h:panelGrid>
 					<p:messages id="msg" />
 
-					<!-- <p:commandButton value="Informacje o kalkulatorze"
-						action="#{kredytBB.info()}" styleClass="ui-button-warning" /> -->
+					
 				</div>
 			</h:form>
 
