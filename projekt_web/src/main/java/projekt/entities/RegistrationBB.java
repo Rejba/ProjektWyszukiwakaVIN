@@ -81,7 +81,8 @@ public class RegistrationBB implements Serializable {
 						new FacesMessage(FacesMessage.SEVERITY_ERROR, "Taki użytkownik już istnieje", null));
 				return null;
 			}
-
+			userDAO.insertUser(user.getIdUser());
+			userDAO.insertRola(user.getRola());
 			
 
 		} catch (Exception e) {
